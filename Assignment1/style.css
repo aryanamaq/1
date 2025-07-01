@@ -1,0 +1,370 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: #f9f9f9;
+  color: #333333;
+  line-height: 1.6;
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover,
+nav a:focus {
+  text-decoration: underline;
+}
+
+main,
+section {
+  padding: 1rem 2rem;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+#create-task,
+#home-tasks-section {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Card container */
+.card_border {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1000px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+/* Headings */
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+
+form input[type="text"],
+form input[type="date"],
+form select,
+form textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  resize: vertical;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form textarea {
+  min-height: 100px;
+}
+
+form button {
+  margin: 1rem auto 0; 
+  padding: 0.9rem;
+  background-color: #3498db;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  width: 30%;
+  box-sizing: border-box;
+}
+
+
+
+form button:hover,
+form button:focus {
+  background-color: #2980b9;
+  box-shadow: 0 0 10px rgba(41, 128, 185, 0.6);
+}
+
+#error-message {
+  color: red;
+  font-weight: 700;
+  min-height: 1.2em;
+}
+
+ul#task-list,
+ul#my-tasks-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+/* Task Cards */
+.task-card {
+  background: white;
+  border-left: 5px solid;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+  word-wrap: break-word;
+  word-break: break-word;
+  min-height: 180px;
+  position: relative;
+}
+
+.task-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.task-card.low {
+  border-color: #27ae60;
+}
+
+.task-card.medium {
+  border-color: #f1c40f;
+}
+
+.task-card.high {
+  border-color: #e74c3c;
+}
+
+.task-card.completed .task-title,
+.task-card.completed .task-description,
+.task-card.completed .task-due-date {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.task-title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 2rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  overflow: hidden;
+}
+
+.task-description {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #555;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  overflow: hidden;
+}
+
+.task-due-date {
+  font-size: 1rem;
+  color: #777;
+}
+
+.task-actions {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.6rem;
+}
+
+.delete-btn-cross {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.delete-btn-cross:hover,
+.delete-btn-cross:focus {
+  transform: scale(1.2);
+}
+
+.delete-btn-cross i {
+  color: #e74c3c;
+  font-size: 26px;
+}
+
+.task-actions input[type="checkbox"] {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.task-actions label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.task-actions input[type="checkbox"]:checked {
+  background-color: #27ae60;
+  border-color: #27ae60;
+}
+
+.task-actions input[type="checkbox"]::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 7px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.task-actions input[type="checkbox"]:checked::after {
+  opacity: 1;
+}
+
+/* Profile Page */
+#profile-page article {
+  max-width: 1000px;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem 2rem;
+  background-color: #2c3e50;
+  color: white;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  .card_border {
+    padding: 1rem;
+    max-width: 95%;
+    border-radius: 8px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .task-title {
+    font-size: 1.5rem;
+  }
+
+  .task-description {
+    font-size: 1rem;
+  }
+
+  form {
+    gap: 0.75rem;
+  }
+
+  form label {
+    font-size: 1rem;
+  }
+
+  form input,
+  form textarea,
+  form select,
+  form button {
+    font-size: 15px;
+    padding: 0.6rem;
+  }
+
+  ul#task-list,
+  ul#my-tasks-list {
+    gap: 0.75rem;
+  }
+}
+
+::placeholder {
+  color: #888;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+
+@media (max-width: 600px) {
+  ul#task-list,
+  ul#my-tasks-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.required {
+  color: red;
+  font-weight: bold;
+}
+

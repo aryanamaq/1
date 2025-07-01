@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chat Application</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Chat Application</h1>
+  </header>
+  <div class="container">
+    <aside>
+      <h2>Users</h2>
+      <ul id="user-list">
+        <li><button data-user="Alice"><span class="status online"></span> Alice</button></li>
+        <li><button data-user="Bob"><span class="status online"></span> Bob</button></li>
+        <li><button data-user="Charlie"><span class="status offline"></span> Charlie</button></li>
+        <li><button data-user="Diana"><span class="status online"></span> Diana</button></li>
+      </ul>
+    </aside>
+    <main>
+      <div class="chat-header" id="chat-title">Select a user</div>
+      <section class="chat-window" id="chat-window" aria-label="Chat messages">
+        <!-- Chat messages appear here -->
+      </section>
+      <section class="message-input-area" aria-label="Message input">
+        <textarea placeholder="Type your message..." rows="2"></textarea>
+        <button type="button">Send</button>
+      </section>
+    </main>
+  </div>
+  <footer>
+    <a href="#">Privacy Policy</a>| aryana@maqsoftware.com
+    <p>&copy; 2025 ChatApp. All rights reserved.</p>
+  </footer>
+</body>
+</html>

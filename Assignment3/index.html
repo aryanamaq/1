@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <title>Travel Expense Splitter</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <h1>Travel Expense Splitter</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home" id="nav-home" aria-label="Home Section">Home</a></li>
+        <li><a href="#expenses" id="nav-expenses" aria-label="Expense History">History</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="home-page">
+    <section class="form-section">
+      <h2>Add New Expense</h2>
+      <form id="expense-form">
+        <div class="form-group">
+          <label for="description">Expense Description <span class="required">*</span></label>
+          <input type="text" id="description" required placeholder="Enter the Description"/>
+        </div>
+        <div class="form-group">
+          <label for="amount">Amount <span class="required">*</span></label>
+          <input type="number" id="amount" min="0" step="0.01" required placeholder="Enter the Amount"/>
+        </div>
+        <div class="form-group">
+          <label for="payer">Payer <span class="required">*</span></label>
+          <select id="payer" required>
+            <option value="" disabled selected style="color:#888;">Select a member</option>
+            <option value="Alice">Alice</option>
+            <option value="Bob">Bob</option>
+            <option value="Charlie">Charlie</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="category">Category <span class="required">*</span></label>
+          <select id="category" required>
+            <option value="" disabled selected style="color:#888;">Select a category</option>
+            <option value="Meals">Meals</option>
+            <option value="Hotels">Hotels</option>
+            <option value="Transport">Transport</option>
+            <option value="Activities">Activities</option>
+          </select>
+        </div>
+        <div class="spacer"></div>
+        <button type="submit" id="submitBtn">Split Expense</button>
+      </form>
+    </section>
+
+    <section class="group-members">
+      <h2>Group Members</h2>
+      <ul id="member-list">
+        <li><img src="https://via.placeholder.com/50" alt="Alice" /> Alice</li>
+        <li><img src="https://via.placeholder.com/50" alt="Bob" /> Bob</li>
+        <li><img src="https://via.placeholder.com/50" alt="Charlie" /> Charlie</li>
+      </ul>
+    </section>
+
+    <section class="summary">
+      <h2>Summary</h2>
+      <p>Total Expenses: <span id="total-expenses">$0.00</span></p>
+      <div id="breakdown">
+        <p>No balances yet.</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="container">
+    <section id="expenses-page" hidden>
+      <h2>History</h2>
+      <div id="no-expenses-placeholder" class="placeholder">
+        No expenses yet.
+      </div>
+      <div class="table-section">
+        <table id="expenses-table">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Amount</th>
+              <th>Payer</th>
+              <th>Category</th>
+            </tr>
+          </thead>
+          <tbody id="transaction-table">
+            <!-- Expense rows inserted dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 TravelExpense Splitter. All rights reserved.</p>
+  </footer>
+
+  <script src="validation.js"></script>
+</body>
+
+</html>

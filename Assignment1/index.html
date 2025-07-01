@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Smart Task Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <h1>Smart Task Manager</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="nav-home" aria-label="Navigate to Home page">Home</a></li>
+                <li><a href="#" id="nav-tasks" aria-label="Navigate to My Tasks page">My Tasks</a></li>
+                <li><a href="#" id="nav-profile" aria-label="Navigate to Profile page">Profile</a></li>
+                <li><a href="#" id="nav-reports" aria-label="Navigate to Reports page">Reports</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<main id="home-page">
+
+    <!-- Create Task Section with tile -->
+    <section id="create-task" aria-label="Task Input Form">
+        <div class="card_border">
+            <h2>Create Task</h2> <!-- Heading inside the tile -->
+            <form id="task-form" aria-describedby="error-message">
+            <div>
+                <label for="title">Title <span class="required">*</span></label>
+                <input type="text" id="title" name="title" required placeholder="Enter task title" />
+            </div>
+            <div>
+                <label for="description">Description</label>
+                <input type="text" id="description" name="description" required placeholder="Enter task description" />
+            </div>
+            <div>
+                <label for="due-date">Due Date <span class="required">*</span></label>
+                <input type="date" id="due-date" name="due-date" required placeholder="Select due date" />
+            </div>
+            <div>
+            <label for="priority">Priority <span class="required">*</span></label>
+            <select id="priority" name="priority" required>
+                <option value="Low">Low</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="High">High</option>
+            </select>
+            </div>
+
+            <div class="spacer"></div>
+            <button type="submit">Submit</button>
+            <p id="error-message" role="alert" aria-live="assertive"></p>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Task List Section with tile container -->
+    <section id="home-tasks-section" aria-label="Tasks Overview">
+        <div class="card_border">
+            <h2>Tasks</h2> 
+            <ul id="task-list" style="margin: 50px; padding: 0; list-style: none;"></ul>
+        </div>
+    </section>
+
+</main>
+    
+
+
+    <!-- My Tasks Page -->
+    <section id="tasks-page" hidden aria-label="My Tasks page">
+        <h2>My Tasks</h2>
+        <ul id="my-tasks-list"></ul>
+    </section>
+
+    <!-- Profile Page -->
+    <section id="profile-page" hidden aria-label="User Profile page">
+        <h2>User Profile</h2>
+        <article>
+            <p><strong>Name:</strong> Aryan Anuj</p>
+            <p><strong>Email:</strong> aryana@maqsoftware.com</p>
+            <p><strong>Role:</strong> Software Engineer</p>
+            <p><strong>Joined:</strong> June 2025</p>
+            <p><strong>Contact:</strong> +91843 458 4068</p>
+        </article>
+    </section>
+
+    <!-- Reports Page -->
+    <section id="reports-page" hidden aria-label="Reports page">
+        <h2>Reports</h2>
+        <p>Coming soon...</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Smart Task Manager | Contact: aryana@maqsoftware.com</p>
+    </footer>
+
+    <script src="tasks.js"></script>
+</body>
+</html>

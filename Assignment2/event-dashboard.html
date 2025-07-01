@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>Event Manager</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home" id="nav-home" aria-label="Navigate to Home section">Home</a></li>
+                <li><a href="#about" id="nav-about" aria-label="Navigate to About section">About</a></li>
+                <li><a href="#contact" id="nav-contact" aria-label="Navigate to Contact section">Contact</a></li>            
+            </ul>
+        </nav>
+    </header>
+
+    <main id="home-page">
+        <section class="form-section">
+            <h2>Create New Event</h2>
+            <form id="eventForm">
+                <div class="form-group">
+                    <label for="eventName">Event Name <span class="required">*</span></label>
+                    <input type="text" id="eventName" name="eventName" placeholder="Enter event name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventDescription">Event Description <span class="required">*</span></label>
+                    <textarea id="eventDescription" name="eventDescription" placeholder="Enter event description"
+                        required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventDateTime">Date and Time <span class="required">*</span></label>
+                    <input type="datetime-local" id="eventDateTime" name="eventDateTime" required>
+                </div>
+                <div class="spacer"></div>
+                <button type="submit"  id="submitBtn">Submit</button>
+            </form>
+        </section>
+
+        <section class="table-section">
+            <h2>Event List</h2>
+            <table id="eventTable">
+                <thead>
+                    <tr>
+                        <th>Event Name</th>
+                        <th>Description</th>
+                        <th>Date & Time</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="eventTableBody">
+                    <!-- events are rendered-->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    
+    <section id="about-page" hidden aria-label="About page">
+        <h2>About Event Manager</h2>
+        <p>
+            Event Manager is a simple web application designed to help users create, manage, and view upcoming events.
+            You can easily add events with a name, description, and date/time, and they’ll be saved in your browser.
+        </p>
+        <p>
+            The app is built with modern web technologies including HTML5, CSS3, and JavaScript. It stores your events locally so you can manage them anytime without needing an account or internet connection.
+        </p>
+        <p>
+            Whether you’re planning meetings, webinars, or personal reminders — Event Manager keeps everything organized in one place.
+        </p>
+    </section>
+
+
+    <section id="contact-page" hidden aria-label="Contact page">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or feedback, please reach out to us at <a href="mailto:aryana@maqsoftware.com">aryana@maqsoftware.com</a>.</p>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2025 Event Management Dashboard. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
